@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prédiction de pluie</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <form action="/predict" method="post">
+        <h1>Prédiction de Pluie</h1>
+
+       
+        <label for="Temperature">Température (°C):</label>
+        <input type="text" name="Temperature" required>
+
+        <label for="Humidity">Humidité :</label>
+        <input type="text" name="Humidity" required>
+
+        <label for="Wind_Speed">Vitesse du vent (km/h):</label>
+        <input type="text" name="Wind_Speed" required><br>
+
+        <label for="Wind_Bearing">Direction du vent (degrés):</label>
+        <input type="text" name="Wind_Bearing" required><br>
+
+        <label for="Visibility">Visibilité (km):</label>
+        <input type="text" name="Visibility" required><br>
+
+        <label for="Pressure">Pression (millibars):</label>
+        <input type="text" name="Pressure" required><br>
+        <div class="button-group">
+        <input type="submit" value="Prediction">
+        </div>
+
+        <p>Result: {{ prediction }}</p>
+    </form>
+</body>
+</html>
